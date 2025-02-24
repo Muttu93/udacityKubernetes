@@ -2,10 +2,9 @@ FROM python:3.10-slim-buster
 
 WORKDIR /src
 
-COPY ./app/requirements.txt requirements.txt
+COPY app/ /src/
+
+COPY ./app/requirements.txt /src/requirements.txt
 
 RUN pip install --no-cache-dir -r requirements.txt
-
-COPY app/ /app/
-
 CMD python app.py
